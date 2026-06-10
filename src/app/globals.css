@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #060807;
+  --color-surface: #0e1210;
+  --color-surface-raised: #141a17;
+  --color-edge: #1f2823;
+  --color-edge-bright: #2c3830;
+  --color-ink: #f2f5f3;
+  --color-ink-muted: #8b958f;
+  --color-ink-faint: #5a635e;
+  --color-pos: #00c805;
+  --color-pos-dim: #00c80522;
+  --color-warn: #ff8a00;
+  --color-neg: #ff5340;
+  --color-neg-dim: #ff534022;
+
+  --font-sans: ui-sans-serif, -apple-system, "SF Pro Display", "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures everywhere money appears */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-edge);
+  border-radius: 16px;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.card-hover:hover {
+  border-color: var(--color-edge-bright);
+}
+
+/* Subtle fade-up entrance */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 400ms ease both;
+}
+.fade-up-1 { animation-delay: 50ms; }
+.fade-up-2 { animation-delay: 100ms; }
+.fade-up-3 { animation-delay: 150ms; }
+.fade-up-4 { animation-delay: 200ms; }
+
+/* Inputs */
+.input {
+  width: 100%;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-edge);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 150ms ease;
+}
+.input:focus {
+  border-color: var(--color-pos);
+}
+.input::placeholder {
+  color: var(--color-ink-faint);
+}
+select.input {
+  appearance: none;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--color-pos);
+  color: #04130a;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  transition: opacity 150ms ease, transform 100ms ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  opacity: 0.88;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--color-edge);
+  color: var(--color-ink-muted);
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 10px;
+  padding: 8px 14px;
+  transition: border-color 150ms ease, color 150ms ease;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  border-color: var(--color-edge-bright);
+  color: var(--color-ink);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-edge);
+  border-radius: 4px;
+}
