@@ -2,6 +2,10 @@ import type { NextAuthConfig } from "next-auth";
 
 // Edge-safe config (no db / bcrypt imports) used by middleware.
 export const authConfig = {
+  // Vercel's proxy sets x-forwarded-host/proto reliably; without this,
+  // Auth.js falls back to localhost and issues cookies under the wrong
+  // (non-secure) name, which the middleware on HTTPS can't see.
+  trustHost: true,
   pages: {
     signIn: "/login",
   },
