@@ -18,10 +18,10 @@
     "@neondatabase/serverless": "^0.10.4",
     "bcryptjs": "^2.4.3",
     "drizzle-orm": "^0.38.3",
-    "next": "^15.1.6",
+    "next": "15.5.19",
     "next-auth": "^5.0.0-beta.25",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "recharts": "^2.15.0",
     "server-only": "^0.0.1",
     "unpdf": "^0.12.1",
@@ -37,6 +37,6 @@
     "drizzle-kit": "^0.30.2",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "5.9.3"
   }
 }

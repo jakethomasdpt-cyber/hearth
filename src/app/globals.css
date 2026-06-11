@@ -47,6 +47,8 @@ body {
 }
 
 /* Subtle fade-up entrance */
+/* Ends at transform:none so finished animations don't leave a transform
+   on ancestors (a lingering transform would hijack position:fixed children). */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -54,7 +56,7 @@ body {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 .fade-up {
@@ -83,8 +85,13 @@ body {
 .input::placeholder {
   color: var(--color-ink-faint);
 }
+/* Keep the native dropdown arrow so selects are recognizable */
 select.input {
-  appearance: none;
+  cursor: pointer;
+}
+option {
+  background: var(--color-surface-raised);
+  color: var(--color-ink);
 }
 
 .label {
